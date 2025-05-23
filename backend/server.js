@@ -10,7 +10,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: 'https://todo-xqtp.onrender.com',
+        origin: 'https://todo-lilac-alpha-59.vercel.app/',
     })
   );
   
