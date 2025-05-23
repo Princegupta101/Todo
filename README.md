@@ -67,7 +67,7 @@ CREATE TABLE todos (
 ## 🧩 Clone the Repository for Frontend
 
 ```bash
-git git@github.com:Princegupta101/Todo.git
+git clone git@github.com:Princegupta101/Todo.git
 ```
 
 Install  dependenices
