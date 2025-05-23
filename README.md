@@ -32,7 +32,10 @@ A full-stack application for managing to-do items, summarizing pending tasks usi
 ## 🌐 Demo
 https://todo-lilac-alpha-59.vercel.app/
 ---
+ 
+## SLACK
 
+https://join.slack.com/share/enQtODk0Njg5NTU1MDE3OC0zMDgwMDk5M2IzN2I1YTczYjk1OTkxNzYzZGMzNjc5MTc5ZDExOTBhMTZkZjM2MDg0M2YwYjc1MWExMTcyODdm
 
 ## ⚙️ Setup Instructions
 
