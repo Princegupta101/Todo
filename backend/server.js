@@ -1,3 +1,4 @@
+import cors from 'cors';
 import dotenv from 'dotenv';
 import  express from 'express';
 
@@ -7,6 +8,12 @@ import summarize from './routes/summarize.js';
 import todos from './routes/todos.js';
 const app = express(); 
 
+app.use(
+    cors({
+        origin: '*',
+    })
+  );
+  
 app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Pong');

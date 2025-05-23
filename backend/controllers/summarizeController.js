@@ -19,20 +19,13 @@ export const summarizeTodos = async (req, res) => {
 
         const todos = data.map((todo) => todo.title).join(', ');
 
-        const response = await cohere.generate({
-            model: 'command-xlarge-20221108',
-            prompt: `Summarize the following todos: ${todos}`,
-            max_tokens: 100,
-            temperature: 0.9,
-            k: 0,
-            p: 1,
-            frequency_penalty: 0,
-            presence_penalty: 0,
-            stop_sequences: ['--'],
-            return_likelihoods: 'NONE',
+     const response = await cohere.chat({
+        model: 'command-a-03-2025',
+        message: `Summarize the following to-do list:\n${todos}`,
         });
+        console.log(response);
 
-        const summary = response.generations[0].text;
+        const summary = response.text;
         const slakWebhookUrl = process.env.SLACK_WEBHOOK_URL;
         if(!slakWebhookUrl) 
             return res.status(400).json({
