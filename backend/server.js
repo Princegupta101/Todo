@@ -11,6 +11,8 @@ const app = express();
 app.use(
     cors({
         origin: 'https://todo-lilac-alpha-59.vercel.app/',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        credentials: true,
     })
   );
   

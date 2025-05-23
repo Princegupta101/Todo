@@ -1,12 +1,97 @@
-# React + Vite
+# 📝 Todo Summary Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack application for managing to-do items, summarizing pending tasks using **Cohere's LLM**, and sending summaries to a **Slack** channel. The app features a modern, responsive UI with a summary sidebar, toast notifications, and robust error handling.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ **CRUD Operations**: Add, edit, delete, and toggle completion of todos.
+- 🧠 **Summarization**: Use Cohere API to summarize pending todos and send to Slack.
+- 🧾 **Summary Sidebar**: Display summaries with spinner and summarize button.
+- 🔔 **Toast Notifications**: Success and error messages via `react-hot-toast`.
+- 🛡️ **Error Handling**: Validations for API calls and LLM responses.
+- 📭 **Empty States**: No todos or summaries? Clear messages shown.
+- 📱 **Responsive Design**: Side-by-side on desktop, stacked on mobile.
+- 🎨 **Styling**: Tailwind CSS with transitions and shadows.
+- 🧮 **Database**: Supabase PostgreSQL with UUIDs.
+- 🧹 **Linting**: ESLint (flat config), with prop-types disabled.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔧 Tech Stack
+
+- **Frontend**: React, Vite, Tailwind CSS, react-hot-toast
+- **Backend**: Node.js, Express, Supabase, Cohere API, Axios
+- **Database**: Supabase (PostgreSQL)
+- **Notifications**: Slack Webhooks
+- **Linting**: ESLint (flat config)
+
+---
+
+## 🌐 Demo
+https://todo-lilac-alpha-59.vercel.app/
+---
+
+
+## ⚙️ Setup Instructions
+
+### 🔍 Prerequisites
+
+- Node.js (v18+)
+- Accounts for:
+  - Supabase (DB)
+  - Cohere (LLM)
+  - Slack (Webhook)
+
+---
+## Create .env file from .env.example
+
+```bash
+PORT=3001
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_anon_key
+COHERE_API_KEY=your_cohere_api_key
+SLACK_WEBHOOK_URL=your_slack_webhook_url
+```
+
+## Supabase Table
+In Supabase SQL Editor:
+```bash
+CREATE TABLE todos (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  title TEXT NOT NULL,
+  completed BOOLEAN DEFAULT FALSE
+);
+```
+## 🧩 Clone the Repository for Frontend
+
+```bash
+git git@github.com:Princegupta101/Todo.git
+```
+
+Install  dependenices
+
+```bash
+npm install
+```
+Run the  react app
+
+```bash
+npm run dev
+```
+## Repository for backend
+```bash
+cd backend
+```
+Install  dependenices
+
+```bash
+npm install
+```
+Rrun the server
+
+```bash
+npm start
+```
+
